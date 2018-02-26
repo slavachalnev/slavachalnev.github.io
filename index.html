@@ -15,9 +15,14 @@
 		<div class="container">
     		<div class="blurb">
         		<h1>I'm Slava!</h1>
-				<p>ladida <a href="/about">Read more about my life...</a></p>
-			<button type="button">Click Me!</button>
+				<p id="my_par">ladida <a href="/about">Read more about my life...</a></p>
+			<button type="button" onclick="my_function">Click Me!</button>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 	</body>
+	<script>
+		function my_function(){
+			document.getElementById("my_par").innerHTML="some javascript stuff";
+		}
+	</script>
 </html>
