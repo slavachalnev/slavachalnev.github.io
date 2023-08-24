@@ -28,7 +28,7 @@ We can compute the same heatmap for all positions and layers:
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <h3>Hover over the points to see the heatmaps</h3>
-<div id="heatmap-container" style="width: 400px; height: 400px;">
+<div id="heatmap-container" style="width: 500px; height: 400px;">
     <div id="heatmaps"></div>
 </div>
 
@@ -45,7 +45,7 @@ We can compute the same heatmap for all positions and layers:
         l: 50,
         r: 10,
         b: 40,
-        t: 10
+        t: 20
     },
     displayModeBar: false
 };
