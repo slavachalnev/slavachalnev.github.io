@@ -27,12 +27,29 @@ We can compute the same heatmap for all positions and layers:
 <div id="html" markdown="0">
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<p>Hover over the points to see the heatmaps</p>
+<h3>Hover over the points to see the heatmaps</h3>
 <div id="heatmap-container" style="width: 400px; height: 400px;">
     <div id="heatmaps"></div>
 </div>
 
 <script>
+    var layout = {
+    xaxis: {
+        title: 'Layers'
+    },
+    yaxis: {
+        title: 'Input Tokens'
+    },
+    showlegend: false,
+    margin: {
+        l: 50,
+        r: 10,
+        b: 40,
+        t: 10
+    },
+    displayModeBar: false
+};
+
     window.onload = function() {
         fetch('/assets/heatmaps.json')
             .then(response => response.json())
@@ -45,7 +62,7 @@ We can compute the same heatmap for all positions and layers:
                     hoverinfo: 'none'
                 };
 
-                Plotly.newPlot('heatmap-container', [mainHeatmap]);
+                Plotly.newPlot('heatmap-container', [mainHeatmap], layout);
 
                 var isUpdating = false;
 
@@ -58,7 +75,7 @@ We can compute the same heatmap for all positions and layers:
                     isUpdating = true; // Set flag before updating
                     mainHeatmap.z = data[i][j];
 
-                    Plotly.react('heatmap-container', [mainHeatmap]).then(() => {
+                    Plotly.react('heatmap-container', [mainHeatmap], layout).then(() => {
                         isUpdating = false; // Reset flag after update
                     });
                 }
