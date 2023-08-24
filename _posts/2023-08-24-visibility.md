@@ -29,31 +29,23 @@ We can visualise the forward pass of a transformer by unrolling the input tokens
 
                 var isUpdating = false;
 
-                document.getElementById('heatmap-container').on('plotly_hover', function(dataPoint) {
-                    if (isUpdating) return;
+                function updateHeatmap(dataPoint) {
+                    if (isUpdating) return; // Skip if update is in progress
+
                     var i = dataPoint.points[0].y;
                     var j = dataPoint.points[0].x;
 
-                    isUpdating = true;
+                    isUpdating = true; // Set flag before updating
                     mainHeatmap.z = data[i][j];
 
                     Plotly.react('heatmap-container', [mainHeatmap]).then(() => {
-                        isUpdating = false;
+                        isUpdating = false; // Reset flag after update
                     });
-                });
-            });
-        document.getElementById('heatmap-container').on('plotly_click', function(dataPoint) {
-            if (isUpdating) return;
-            var i = dataPoint.points[0].y;
-            var j = dataPoint.points[0].x;
-        
-            isUpdating = true;
-            mainHeatmap.z = data[i][j];
-        
-            Plotly.react('heatmap-container', [mainHeatmap]).then(() => {
-                isUpdating = false;
-            });
-        });
-    };
+                }
+
+                document.getElementById('heatmap-container').on('plotly_hover', updateHeatmap);
+                document.getElementById('heatmap-container').on('plotly_click', updateHeatmap);
+    });
+}
 </script>
 </div>
