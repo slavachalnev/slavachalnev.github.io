@@ -42,6 +42,18 @@ We can visualise the forward pass of a transformer by unrolling the input tokens
                     });
                 });
             });
+        document.getElementById('heatmap-container').on('plotly_click', function(dataPoint) {
+            if (isUpdating) return;
+            var i = dataPoint.points[0].y;
+            var j = dataPoint.points[0].x;
+        
+            isUpdating = true;
+            mainHeatmap.z = data[i][j];
+        
+            Plotly.react('heatmap-container', [mainHeatmap]).then(() => {
+                isUpdating = false;
+            });
+        });
     };
 </script>
 </div>
