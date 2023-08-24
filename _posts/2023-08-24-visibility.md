@@ -14,7 +14,7 @@ We can visualise the forward pass of a transformer by unrolling the input tokens
 
 <script>
     window.onload = function() {
-        fetch('assets/heatmaps.json')
+        fetch('/assets/heatmaps.json')
             .then(response => response.json())
             .then(data => {
                 var m = 12, n = 20; // Update with your actual dimensions
