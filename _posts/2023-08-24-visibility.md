@@ -1,5 +1,5 @@
 ---
-title: "What can a transformer's hidden state see?"
+title: "What can a hidden state see?"
 date: 2023-08-24
 mathjax: true
 ---
