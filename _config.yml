@@ -3,5 +3,7 @@ theme: minima
 # Name of website
 title: Slava Chalnev blog
 
+description: Thoughts on Transformer Thoughts
+
 # Your name to show in the footer
 author: Sviatoslav Chalnev
