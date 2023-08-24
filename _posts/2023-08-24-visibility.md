@@ -9,7 +9,7 @@ We can visualise the forward pass of a transformer by unrolling the input tokens
 
 Consider the hidden state \( h_{t, n} \) (the output of the nth layer at position t). Which states can influence it? Which states can it influence?
 
-![unrolled3](/assets/transformer_diagram_3.png)
+![unrolled3](/assets/transformer_diagram_3.png){: width="50%" }
 
 \( h_{t, n} \) is influenced by hidden states in the bottom left quadrant and can influence hidden states in the top right quadrant.
 
