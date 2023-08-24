@@ -20,7 +20,7 @@ This is a plot of position 10, layer 5 for gpt2-small. Input text is ```<|endoft
 
 ![heatmap of 1 sample](/assets/1_sample.png)
 
-The code I used to generate this is [here](https://github.com/slavachalnev/visibility). Note that I haven't yet settled on how to normalise the hidden states. I'm currently using the L2 norm of the hidden state and then summing all the gradients for each position.
+The code I used to generate this is [here](https://github.com/slavachalnev/visibility). Note: I haven't yet settled on how to normalise the hidden states. I'm currently using the L2 norm of the hidden state and then summing all the gradients for each position.
 
 We can compute the same heatmap for all positions and layers:
 
@@ -45,7 +45,7 @@ We can compute the same heatmap for all positions and layers:
         l: 50,
         r: 10,
         b: 40,
-        t: 20
+        t: 30
     },
     displayModeBar: false
 };
