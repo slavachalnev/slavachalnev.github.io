@@ -42,3 +42,8 @@ Since early layers can't see later layers and late layers can't influence the ea
 
 1. Early layers extract features that are useful at future token positions.
 2. Late layers try to predict the next token.
+
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
